@@ -1,0 +1,53 @@
+#mainBody {
+    min-height: 100vh;
+    background-color: #070535;
+}
+
+#counter{
+    color : #fff;
+    display:grid;
+    grid-template-columns: repeat( 9 , 1fr);
+    margin: 0% 4%;
+    border: solid 7px #fff; 
+}
+
+.whichTimer{
+    text-align: center;
+    font-size: 3vw;
+}
+.hh,.mm,.ss,.ms,.ns{
+    text-align: center;
+    font-size: 5.9vw;
+}
+
+.lap-hh,.lap-mm,.lap-ss,.lap-ms,.lap-ns{
+    text-align: center;
+    font-size: 3vw;
+}
+
+
+#lapCounter {
+    color : rgb(238, 185, 9);;
+    display:grid;
+    grid-template-columns: repeat( 9 , 1fr);
+    margin: 5% 26% 0% 26%;
+}
+
+#controlButtons {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin-top: 2%;
+}
+
+#controlButtons>button {
+    margin: 5px;
+}
+
+#lapTable{
+    color: #fff;
+    margin-top: 2%;
+}
+#tableContainer{
+    margin: 0% 2.5%;
+}
