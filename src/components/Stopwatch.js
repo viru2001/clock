@@ -66,13 +66,13 @@ export const Counter = () => {
             lhh: ("0" + Math.floor((lapTime / 60000) / 60)).slice(-2),
             lmm: ("0" + Math.floor((lapTime / 60000) % 60)).slice(-2),
             lss: ("0" + Math.floor((lapTime / 1000) % 60)).slice(-2),
-            lms: ("0" + Math.floor((lapTime / 10) % 100)).slice(-2),
-            lns: ("00" + (lapTime % 1000)).slice(-3),
+
+            lms: ("00" + (lapTime % 1000)).slice(-3),
             hh: ("0" + Math.floor((time / 60000) / 60)).slice(-2),
             mm: ("0" + Math.floor((time / 60000) % 60)).slice(-2),
             ss: ("0" + Math.floor((time / 1000) % 60)).slice(-2),
-            ms: ("0" + Math.floor((time / 10) % 100)).slice(-2),
-            ns: ("00" + (time % 1000)).slice(-3)
+        
+            ms: ("00" + (time % 1000)).slice(-3)
 
         }
         setlapLogs([...lapLogs, currentLap])   
@@ -146,14 +146,9 @@ export const Counter = () => {
                 <div>
                     <h1 className="hh"> :</h1>
                 </div>
+    
                 <div className="innerContainer">
-                    <h1 className="ms"> {("0" + Math.floor((time / 10) % 100)).slice(-2)}</h1>
-                </div>
-                <div>
-                    <h1 className="hh"> .</h1>
-                </div>
-                <div className="innerContainer">
-                    <h1 className="ns"> {("00" + (time % 1000)).slice(-3)}</h1>
+                    <h1 className="ms"> {("00" + (time % 1000)).slice(-3)}</h1>
                 </div>
 
                 <h1 className="whichTimer">hours</h1>
@@ -162,9 +157,8 @@ export const Counter = () => {
                 <h1></h1>
                 <h1 className="whichTimer">sec</h1>
                 <h1></h1>
-                <h1 className="whichTimer">m sec</h1>
-                <h1></h1>
-                <h1 className="whichTimer">n sec</h1>
+                <h1 className="whichTimer">mili sec</h1>
+                
             </div>
 
 
@@ -192,14 +186,9 @@ export const Counter = () => {
                 <div>
                     <h1 className="lap-hh"> :</h1>
                 </div>
+            
                 <div className="innerContainer">
-                    <h1 className="lap-ms"> {("0" + Math.floor((lapTime / 10) % 100)).slice(-2)}</h1>
-                </div>
-                <div>
-                    <h1 className="lap-hh"> .</h1>
-                </div>
-                <div className="innerContainer">
-                    <h1 className="lap-ns"> {("00" + (lapTime % 1000)).slice(-3)}</h1>
+                    <h1 className="lap-ms"> {("00" + (lapTime % 1000)).slice(-3)}</h1>
                 </div>
             </div>
 
@@ -229,8 +218,8 @@ export const Counter = () => {
                             return (               
                                 <tr key={log.sno}>
                                     <td>{"#"+Number(log.sno+1)}</td>
-                                    <td>{log.lhh + ":" + log.lmm + ":" + log.lss + ":" + log.lms + ":" + log.lns}</td>
-                                    <td>{log.hh + ":" + log.mm + ":" + log.ss + ":" + log.ms + ":" + log.ns}</td>
+                                    <td>{log.lhh + ":" + log.lmm + ":" + log.lss + ":" + log.lms }</td>
+                                    <td>{log.hh + ":" + log.mm + ":" + log.ss + ":" + log.ms }</td>
                                     <td><DeleteIcon style={{color: "red"}}  onClick={()=> deleteLog(log)} /></td>
                                 </tr>                              
                             )}

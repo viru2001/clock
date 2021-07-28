@@ -15,7 +15,7 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-          <Route exact path={["/","/clock"]} render={()=>{
+          <Route exact path="/clock" render={()=>{
             return <Clock />
           }}>
           </Route>

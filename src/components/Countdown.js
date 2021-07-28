@@ -71,7 +71,7 @@ export default function Countdown() {
           if (prevSeconds !== 0) {
             return prevSeconds - 1
           }
-          else if (prevSeconds === 0 && minutes > 0 ) {
+          else if (prevSeconds === 0 && minutes >= 0 ) {
             setminutes((prevMinutes) => {
               if (prevMinutes !== 0) {
                 return prevMinutes - 1
@@ -111,8 +111,9 @@ export default function Countdown() {
           else{
             if(needToplaySound){
               setplaySong(true)
-              setisEnded(true)
+              
             }
+            setisEnded(true)
             // console.log("Countdown Ended")
             
             return 0
@@ -126,18 +127,18 @@ export default function Countdown() {
     return () => {
       clearInterval(countdownInterval)
     }
-  }, [countdownOn])
+  }, [countdownOn,hrs,minutes,needToplaySound])
 
 
-  const handleSongLoading = ()=>{
+  // const handleSongLoading = ()=>{
 
-  }
-  const handleSongPlaying = ()=>{
+  // }
+  // const handleSongPlaying = ()=>{
     
-  }
-  const handleSongFinishedPlaying = ()=>{
+  // }
+  // const handleSongFinishedPlaying = ()=>{
     
-  }
+  // }
 
   return (
 
@@ -249,9 +250,9 @@ export default function Countdown() {
             url = {reminderSong}
             playStatus = { playSong ? Sound.status.PLAYING : Sound.status.STOPPED }
             playFromPosition = { 300 /* in milliseconds */}
-            onLoading = { handleSongLoading }
-            onPlaying = { handleSongPlaying }
-            onFinishedPlaying = { handleSongFinishedPlaying }
+            // onLoading = { handleSongLoading }
+            // onPlaying = { handleSongPlaying }
+            // onFinishedPlaying = { handleSongFinishedPlaying }
               />
     </div>
 
